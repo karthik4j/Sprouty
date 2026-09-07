@@ -1,0 +1,1001 @@
+[
+    {
+        "id": "2c97eec05d37e64b",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d89cf54c9df4a667",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "28d1e053f97034f9",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#fcfcfd",
+            "primary": "#0d74ce",
+            "bgPage": "#f9f9fb",
+            "groupBg": "#ffffff",
+            "groupOutline": "#d9d9e0"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "dc146127565cfa3c",
+        "type": "ui-page",
+        "name": "Dashboard",
+        "ui": "d89cf54c9df4a667",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "28d1e053f97034f9",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "3dbac6288fee4bdd",
+        "type": "ui-group",
+        "name": "Group 1",
+        "page": "dc146127565cfa3c",
+        "width": 6,
+        "height": 1,
+        "order": 2,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "20c2e2808c68bb31",
+        "type": "tls-config",
+        "name": "HiveMQ TLS",
+        "certType": "files",
+        "cert": "",
+        "key": "",
+        "p12": "",
+        "p12name": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "servername": "",
+        "verifyservercert": false,
+        "alpnprotocol": "",
+        "certEnv": "",
+        "keyEnv": "",
+        "caEnv": ""
+    },
+    {
+        "id": "8e68a291edf38432",
+        "type": "mqtt-broker",
+        "name": "hivemind",
+        "broker": "2280a2eb77e7451eb31e70c610d94088.s1.eu.hivemq.cloud",
+        "port": "8883",
+        "tls": "",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "6778e3d6f6dc7b6e",
+        "type": "ui-group",
+        "name": "side",
+        "page": "dc146127565cfa3c",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "cd7cd1cb027cd220",
+        "type": "mqtt in",
+        "z": "2c97eec05d37e64b",
+        "name": "",
+        "topic": "college-iot/device01/sensors/temperature",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "8e68a291edf38432",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 300,
+        "y": 340,
+        "wires": [
+            [
+                "14a4e7accbf2ddaf"
+            ]
+        ]
+    },
+    {
+        "id": "e7ec5406cf4bd463",
+        "type": "mqtt in",
+        "z": "2c97eec05d37e64b",
+        "name": "",
+        "topic": "college-iot/device01/sensors/humidity",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "8e68a291edf38432",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 290,
+        "y": 420,
+        "wires": [
+            [
+                "364a0cb6c62094f2",
+                "932f7e1b80d3d93e"
+            ]
+        ]
+    },
+    {
+        "id": "88ba040f4cd44193",
+        "type": "mqtt in",
+        "z": "2c97eec05d37e64b",
+        "name": "",
+        "topic": "college-iot/device01/sensors/soil-moisture",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "8e68a291edf38432",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 300,
+        "y": 660,
+        "wires": [
+            [
+                "22826eb5459fd110"
+            ]
+        ]
+    },
+    {
+        "id": "fd518905aee4e9e3",
+        "type": "mqtt in",
+        "z": "2c97eec05d37e64b",
+        "name": "",
+        "topic": "college-iot/device01/irrigation/status",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "8e68a291edf38432",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 280,
+        "y": 600,
+        "wires": [
+            [
+                "0a67b6a4f3fae8c2"
+            ]
+        ]
+    },
+    {
+        "id": "d65696aa506cdcea",
+        "type": "ui-gauge",
+        "z": "2c97eec05d37e64b",
+        "name": "",
+        "group": "3dbac6288fee4bdd",
+        "order": 5,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Temperature ",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "°C",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "25",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "40",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "50",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 810,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "364a0cb6c62094f2",
+        "type": "ui-gauge",
+        "z": "2c97eec05d37e64b",
+        "name": "",
+        "group": "3dbac6288fee4bdd",
+        "order": 3,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Humidity",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "%",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "30",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "50",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 800,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3776e8de6fef4589",
+        "type": "ui-gauge",
+        "z": "2c97eec05d37e64b",
+        "name": "Soil Moisture",
+        "group": "3dbac6288fee4bdd",
+        "order": 4,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Soil Moisture",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "%",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "25",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "50",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 810,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0a67b6a4f3fae8c2",
+        "type": "ui-text",
+        "z": "2c97eec05d37e64b",
+        "group": "3dbac6288fee4bdd",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Pump Status",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 590,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "a12efa9b21b9cf26",
+        "type": "mqtt out",
+        "z": "2c97eec05d37e64b",
+        "name": "",
+        "topic": "college-iot/device01/irrigation/control",
+        "qos": "",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8e68a291edf38432",
+        "x": 1130,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "14a4e7accbf2ddaf",
+        "type": "function",
+        "z": "2c97eec05d37e64b",
+        "name": "function 1",
+        "func": "msg.payload = Number(msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 340,
+        "wires": [
+            [
+                "d65696aa506cdcea",
+                "e5b303124315ef65"
+            ]
+        ]
+    },
+    {
+        "id": "e5b303124315ef65",
+        "type": "ui-chart",
+        "z": "2c97eec05d37e64b",
+        "group": "6778e3d6f6dc7b6e",
+        "name": "Temperature",
+        "label": "Temperature",
+        "order": 1,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": false,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": "6",
+        "height": "4",
+        "className": "",
+        "interpolation": "linear",
+        "x": 810,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "932f7e1b80d3d93e",
+        "type": "ui-chart",
+        "z": "2c97eec05d37e64b",
+        "group": "6778e3d6f6dc7b6e",
+        "name": "Humidity",
+        "label": "Humidity",
+        "order": 2,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": false,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": "6",
+        "height": "4",
+        "className": "",
+        "interpolation": "linear",
+        "x": 800,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cce1eadaedbb711a",
+        "type": "mqtt out",
+        "z": "2c97eec05d37e64b",
+        "name": "",
+        "topic": "college-iot/device01/actuators/relay",
+        "qos": "",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8e68a291edf38432",
+        "x": 1160,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "53448da6b5ea8eb3",
+        "type": "ui-switch",
+        "z": "2c97eec05d37e64b",
+        "name": "Automatic Irrigation",
+        "label": "Irrigation Permission",
+        "group": "3dbac6288fee4bdd",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 690,
+        "y": 760,
+        "wires": [
+            [
+                "2a8aefbfcd0ca443"
+            ]
+        ]
+    },
+    {
+        "id": "2a8aefbfcd0ca443",
+        "type": "function",
+        "z": "2c97eec05d37e64b",
+        "name": "function 2",
+        "func": "if (msg.payload === true) {\n    msg.payload = \"ENABLE\";\n} else {\n    msg.payload = \"DISABLE\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 760,
+        "wires": [
+            [
+                "cce1eadaedbb711a"
+            ]
+        ]
+    },
+    {
+        "id": "c85e6d530c68ae36",
+        "type": "ui-switch",
+        "z": "2c97eec05d37e64b",
+        "name": "",
+        "label": "Start Pump",
+        "group": "3dbac6288fee4bdd",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 670,
+        "y": 920,
+        "wires": [
+            [
+                "8f9d150a02c37eab"
+            ]
+        ]
+    },
+    {
+        "id": "8f9d150a02c37eab",
+        "type": "function",
+        "z": "2c97eec05d37e64b",
+        "name": "function 3",
+        "func": "if (msg.payload === true) {\n    msg.payload = \"ON\";\n} \nelse {\n    msg.payload = \"OFF\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 920,
+        "wires": [
+            [
+                "a12efa9b21b9cf26"
+            ]
+        ]
+    },
+    {
+        "id": "3554886d748fd4b6",
+        "type": "mqtt in",
+        "z": "2c97eec05d37e64b",
+        "name": "",
+        "topic": "college-iot/device01/irrigation/permission",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "8e68a291edf38432",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 760,
+        "wires": [
+            [
+                "55cd01867c3c092c"
+            ]
+        ]
+    },
+    {
+        "id": "55cd01867c3c092c",
+        "type": "function",
+        "z": "2c97eec05d37e64b",
+        "name": "function 4",
+        "func": "if (msg.payload === \"ENABLED\") {\n    msg.payload = true;\n} \nelse if (msg.payload === \"DISABLED\") {\n    msg.payload = false;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 760,
+        "wires": [
+            [
+                "53448da6b5ea8eb3"
+            ]
+        ]
+    },
+    {
+        "id": "fe76784a0162b53a",
+        "type": "mqtt in",
+        "z": "2c97eec05d37e64b",
+        "name": "",
+        "topic": "college-iot/device01/irrigation/status",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "8e68a291edf38432",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 920,
+        "wires": [
+            [
+                "2adc1fd17ea88c35"
+            ]
+        ]
+    },
+    {
+        "id": "2adc1fd17ea88c35",
+        "type": "function",
+        "z": "2c97eec05d37e64b",
+        "name": "function 5",
+        "func": "if (msg.payload === \"ON\") {\n    msg.payload = true;\n}\nelse if (msg.payload === \"OFF\") {\n    msg.payload = false;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 920,
+        "wires": [
+            [
+                "c85e6d530c68ae36"
+            ]
+        ]
+    },
+    {
+        "id": "052440eaa26cfed0",
+        "type": "ui-text",
+        "z": "2c97eec05d37e64b",
+        "group": "3dbac6288fee4bdd",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Soil Condition",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1140,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "24ad774204dec689",
+        "type": "ui-chart",
+        "z": "2c97eec05d37e64b",
+        "group": "6778e3d6f6dc7b6e",
+        "name": "Soil Moisture",
+        "label": "Soil Moisture",
+        "order": 3,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": false,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": "4",
+        "className": "",
+        "interpolation": "linear",
+        "x": 810,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "22826eb5459fd110",
+        "type": "function",
+        "z": "2c97eec05d37e64b",
+        "name": "function 6",
+        "func": "let moisture = Number(msg.payload);\n\n// Convert 0–1024 to 0–100%\nlet percentage = (moisture / 1024) * 100;\n\n// Keep it within the valid range\npercentage = Math.max(0, Math.min(100, percentage));\n\nmsg.payload = Number(percentage.toFixed(1));\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 660,
+        "wires": [
+            [
+                "24ad774204dec689",
+                "3776e8de6fef4589",
+                "64c83a9b31362954"
+            ]
+        ]
+    },
+    {
+        "id": "64c83a9b31362954",
+        "type": "function",
+        "z": "2c97eec05d37e64b",
+        "name": "function 7",
+        "func": "let moisture = Number(msg.payload);\n\nif (moisture <= 25) {\n    msg.payload = \"Very Dry\";\n}\nelse if (moisture <= 50) {\n    msg.payload = \"Dry\";\n}\nelse if (moisture <= 75) {\n    msg.payload = \"Hydrated\";\n}\nelse {\n    msg.payload = \"Wet\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 560,
+        "wires": [
+            [
+                "052440eaa26cfed0"
+            ]
+        ]
+    },
+    {
+        "id": "bfe165a1f0715b3b",
+        "type": "mqtt out",
+        "z": "2c97eec05d37e64b",
+        "name": "",
+        "topic": "college-iot/device01/actuators/relay",
+        "qos": "",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8e68a291edf38432",
+        "x": 820,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "f6d0015b56f88690",
+        "type": "mqtt out",
+        "z": "2c97eec05d37e64b",
+        "name": "",
+        "topic": "college-iot/device01/irrigation/control",
+        "qos": "",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8e68a291edf38432",
+        "x": 810,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "0ba6a09248bebe0c",
+        "type": "inject",
+        "z": "2c97eec05d37e64b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "object",
+        "payloadType": "date",
+        "x": 460,
+        "y": 1060,
+        "wires": [
+            [
+                "bfe165a1f0715b3b",
+                "f6d0015b56f88690"
+            ]
+        ]
+    }
+]
